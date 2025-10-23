@@ -1,5 +1,5 @@
-import { afterEveryRender, Component, inject, PLATFORM_ID, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { afterEveryRender, Component, DOCUMENT, inject, PLATFORM_ID, signal } from '@angular/core';
+import { Event, NavigationEnd, Router, RouterOutlet } from '@angular/router';
 /**components */
 import { Footer } from './shared/components/footer/footer';
 import { Navbar } from './shared/components/navbar/navbar';
@@ -14,14 +14,30 @@ import { AppMode } from './core/services/app-mode';
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('digitalBondApp');
+   documentLoaded = signal(false);
   protected darkMode = inject(AppMode);
   protected id = inject(PLATFORM_ID);
+  private document = inject(DOCUMENT)
 
   constructor() {
     afterEveryRender(() => {
       initFlowbite();
     });
+
+    if (this.document.readyState === 'complete') {
+       setTimeout(() => {
+         this.documentLoaded.set(true);
+       }, 1000);
+    }else {
+
+      this.document.addEventListener('DOMContentLoaded' , ()=>{
+        setTimeout(()=>{
+          this.documentLoaded.set(true)
+        },3000)
+      });
+    }
+
+
   }
 
 }
