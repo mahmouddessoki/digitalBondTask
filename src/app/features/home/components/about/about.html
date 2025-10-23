@@ -1,0 +1,81 @@
+<section id="about" class="mx-auto py-20 section-app items-start">
+  <div data-aos="fade-up" class="about-content col-span-12 lg:col-span-5">
+    <p class="uppercase text-main dark:text-darkTheme">more about us</p>
+    <h2 class="text-[30px] mb-5 capitalize font-[500] text-[#2d465e] mt-5">digital bond story</h2>
+    <p class="text-gray-500 text-lg tracking-wide leading-6 text-justify">
+      We are a bonded family that mix and match creativity and commitment to help brands go beyond
+      the limit. Bonders are a blend of cheerful, uprising and creative peeps working to deliver
+      outstanding services. We are committed and loyalty runs in the veins; when we are put together
+      our results blow minds
+    </p>
+    <div class="ceo_and_phone my-8 flex lg:flex-nowrap flex-wrap *:grow justify-between items-center">
+      <div class="ceo flex items-center w-full xl:w-auto gap-4">
+        <img
+          src="/assets/images/about/ceo.webp"
+          alt="ceo img"
+          class="w-[50px] h-[50px] rounded-full"
+        />
+        <div class="ceo_info">
+          <h3>Jane Doe</h3>
+          <p class="text-main dark:text-darkTheme">CEO, Digital Bond</p>
+        </div>
+      </div>
+      <div class="phone flex items-center w-full xl:w-auto gap-4 mt-5 dark:bg-gray-700 dark:text-white bg-white shadow-lg rounded-lg p-3">
+        <div class="icon">
+          <i class="fa-solid fa-phone text-xl text-main dark:text-darkTheme"></i>
+        </div>
+        <div class="phone-info capitalize">
+          <p>Call us anytime</p>
+          <p>+201021551322</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-aos="zoom-in-up" class="lg:col-start-7 lg:col-span-6 col-span-12">
+    <div class="about-img relative">
+      <img
+        src="/assets/images/about/about-5.webp"
+        alt="about image"
+        class="w-1/1 rounded-lg shadow-lg"
+      />
+      <div data-aos="flip-down" data-aos-delay="500"
+        class="about-overlay-1 hidden lg:inline-block absolute top-[50%] left-0 w-[40%] transform -translate-y-1/2 -translate-x-1/4"
+      >
+        <img
+          src="/assets/images/about/about-2.webp"
+          alt="about image over"
+          class="w-full rounded-lg shadow-lg border-8 border-white"
+        />
+      </div>
+      <div
+        class="about-overlay-2 text-white absolute bg-main dark:bg-darkTheme sm:bottom-10 bottom-1 sm:right-10 right:5 sm:px-5 px-2 sm:py-3 py-1 lg:w-[55%] rounded-[10px] shadow-lg"
+      >
+        <span class="sm:text-4xl text-2xl font-medium me-2">8+</span>
+        <span>Years</span>
+        <p class="text-white capitalize">Of experience in business service</p>
+      </div>
+    </div>
+  </div>
+  <div class="services mt-15 col-span-12">
+    <div class="grid grid-cols-12 items-center lg:gap-y-10 gap-5">
+      @for (feature of digitalBondFeatures; track $index) {
+      <div [attr.data-aos]="$last?'zoom-in-left':'zoom-in-right'" class="lg:col-span-6 col-span-12 h-full">
+        <div
+          class="service-card dark:text-white bg-white dark:bg-gray-700 shadow-lg transform lg:hover:scale-[1.08] transition duration-300 h-full text-center rounded-lg p-5"
+        >
+          <div class="icon  text-3xl w-fit mx-auto">
+            <img src="/assets/images/about/{{ feature.img }}" class="h-10" />
+          </div>
+          <div class="service-info ">
+            <h3 class="text-2xl font-bold my-3">Our {{ feature.title }}</h3>
+            <p class="text-gray-500 dark:text-white">
+              {{ feature.description }}
+            </p>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,76 @@
+
+<footer class="p-4 py-10 bg-[#F1F1F2] sm:p-6 dark:bg-gray-800">
+    <div class="mx-auto w-full">
+        <div class="lg:flex lg:justify-between items-center">
+            <div class="mb-6 md:mb-0 lg:w-1/4 w-1/2 mx-auto">
+                <a routerLink="/" class="flex items-center">
+                    <img src="/assets/images/Logo_V2.gif" class="w-1/1" alt="Digital Bonds Logo" />
+                </a>
+            </div>
+            <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:w-[60%] w-full justify-between gap-8 sm:gap-6 ">
+                <div>
+                    <h3 class="mb-6 text-lg font-semibold text-gray-900 uppercase dark:text-white">Get in touch</h3>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="https://wa.me/201021551322" target="_blank" >
+                              <i class="fa-solid fa-phone" ></i>
+                            <span class="ml-2 text-sm">+2 - 01021551322</span>
+                            </a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="mailto:Bonder@digitalbondmena.com" target="_blank" class="">
+                              <i class="fa-solid fa-envelope"></i>
+                              <span class="ml-2 text-sm">Bonder@digitalbondmena.com</span>
+                            </a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="https://www.google.com/maps/place/Digital+Bond/@30.0328515,31.20918,17z/data=!4m6!3m5!1s0x145841dbdca09375:0xc8f0a33432ed7642!8m2!3d30.0327989!4d31.2091984!16s%2Fg%2F11pv31c2z3?entry=ttu&g_ep=EgoyMDI1MTAyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="">
+                              <i class="fa-solid fa-location-dot"></i>
+                              <span class="ml-2 text-sm">11 Dr El-Sebaey, Ad Dokki, Giza Governorate</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-6 text-lg font-semibold text-gray-900 uppercase dark:text-white">explore more</h3>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a (click)="scrollToSection('hero')" class=" capitalize">home</a>
+                        </li>
+                        <li class="mb-4">
+                            <a (click)="scrollToSection('about')" class="capitalize">about</a>
+                        </li>
+                        <li class="mb-4">
+                          <a (click)="scrollToSection('reviews')" class="capitalize">Reviews</a>
+                        </li>
+                        <li class="mb-4">
+                            <a (click)="scrollToSection('contact')" class="capitalize">contact</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-6 text-lg font-semibold text-gray-900 uppercase dark:text-white">The Bonders Are</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                      A bonded family that mix and match creativity and commitment to help brands go beyond the limit.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm  block text-gray-500 md:text-left text-center dark:text-gray-400">
+              Copyright © 2025 All rights reserved by Digital Bonds
+            </span>
+            <div class="flex mt-4 space-x-6 justify-center sm:mt-0">
+
+             <app-social-icons />
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+

@@ -1,0 +1,7 @@
+.scroll-nav .navLink {
+  transition: all 0.3s ease-in-out;
+  color: #ffffff;
+  &:hover {
+    transform: translateY(-10px);
+  }
+}

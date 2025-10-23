@@ -1,0 +1,42 @@
+@if (control?.errors && control?.touched && !control?.get('rePassword')) {
+
+  @if (control?.getError('required')) {
+    <p class="error-msg">
+      input is required
+    </p>
+  }
+  @if (control?.getError('minlength')) {
+    <p class="error-msg">
+      name must be at least 2 characters long
+    </p>
+  }
+  @if (control?.getError('maxlength')) {
+    <p class="error-msg">
+      name must not be greater than 20 characters
+    </p>
+  }
+  @if (control?.getError('email')) {
+    <p class="error-msg">
+     must be valid email address
+    </p>
+  }
+  @if (control?.getError('invalidMsg')) {
+    <p class="error-msg">
+     Invalid message, must be at least 10 characters long and not just spaces
+     
+    </p>
+  }
+  @if (control?.getError('phoneInvalid')) {
+    <p class="error-msg">
+      phone number is not valid
+    </p>
+  }
+
+}
+
+@if (control?.getError('mismatch') && control?.get('rePassword')?.touched) {
+    <p class="error-msg">
+      passwords does not match
+    </p>
+
+}

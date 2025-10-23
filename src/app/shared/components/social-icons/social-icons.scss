@@ -1,0 +1,14 @@
+.line-above::before ,
+.line-above::after {
+  content: "";
+  display: block;
+  width: 30%;
+  height: 1px;
+  background-color: rgba(0,0,0,0.2); /* Tailwind's gray-200 */
+  margin-bottom: 0.5rem; /* Adjust spacing as needed */
+  position: absolute;
+  top: 50%;
+}
+ .line-above::after {
+  right: 0 !important;
+ }

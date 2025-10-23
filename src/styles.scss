@@ -1,0 +1,132 @@
+/* You can add global styles to this file, and also import other style files */
+@use "tailwindcss";
+@use "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-primary : "segoe ui light", sans-serif;
+  --font-secondary : "Inter", sans-serif;
+  --font-reviews : "Roboto", sans-serif;
+  --color-main:#17BB82;
+  --color-darkTheme:#0E7050;
+
+}
+
+@layer components {
+  .nav {
+    @apply fixed top-0 transition-all duration-300 left-0 w-full z-50 bg-transparent border-gray-200
+  }
+  .scroll-nav {
+    @apply  bg-main/85 shadow-md dark:bg-gray-800
+  }
+  .nav-inner {
+    @apply max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4
+  }
+  .navLink {
+    @apply block py-2 px-3 uppercase text-white bg-blue-700 rounded-sm md:bg-transparent md:text-white md:p-0
+    }
+    .md-nav-container {
+      @apply hidden w-full lg:block lg:w-auto bg-transparent
+    }
+    .md-nav-list {
+      @apply flex flex-col font-medium p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg  lg:space-x-8 rtl:space-x-reverse lg:flex-row md:mt-0 lg:border-0 lg:bg-transparent  dark:border-gray-700
+    }
+    .nav-logo {
+      @apply flex items-center space-x-3 rtl:space-x-reverse
+    }
+
+    .icon-li {
+      @apply bg-[rgba(0,0,0,0.2)] duration-300 hover:scale-150 hover:bg-[rgba(0,0,0,0.7)] w-[35px] h-[35px] flex rounded-full items-center justify-center
+    }
+    .side-nav {
+      @apply md:hidden fixed top-0 left-0 z-50 h-screen p-4 overflow-y-auto transition-transform -translate-x-full w-64
+    }
+    .side-nav-link {
+      @apply flex items-center p-2  rounded-lg  hover:bg-gray-100 dark:hover:bg-gray-700
+    }
+    .side-nav-icon {
+      @apply text-[25px]  transition duration-75 dark:group-hover:text-white
+    }
+    .nav-header {
+      @apply flex items-center justify-between mb-6
+    }
+    .side-nav-close {
+      @apply text-white static bg-transparent  hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white
+    }
+
+    .hero-btn {
+      @apply text-white sm:text-base text-[14px] relative border border-transparent px-1 sm:px-6 py-3 w-1/3 hover:shadow-lg hover:bg-[#17BB82] dark:hover:bg-darkTheme cursor-pointer transition hover:shadow-lg hover:translate-y-[-15px] duration-300 font-semibold mt-8 rounded-full
+    }
+    .section-app {
+      @apply  max-w-screen-xl px-5 xl:p-0 lg:m-0 grid grid-cols-12  items-center justify-between font-secondary
+    }
+    .section-header {
+      @apply md:text-4xl sm:text-2xl text-xl mx-auto relative w-fit font-bold tracking-[4px] text-center text-main dark:text-darkTheme dark:font-bold font-secondary mb-10
+    }
+    .form-input {
+      @apply bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-main focus:border-main block w-full p-3.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+    }
+    .form-btn {
+      @apply text-white cursor-pointer bg-main dark:bg-darkTheme me-auto  focus:outline-none  font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 text-center dark:bg-darkTheme dark:hover:bg-darkTheme dark:focus:ring-blue-800
+    }
+    .invalid-btn {
+      @apply bg-main/50 cursor-not-allowed
+    }
+    .form-textarea {
+      @apply block p-3.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-main focus:border-main dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+    }
+    .error-msg {
+      @apply text-sm text-red-600 mt-2 dark:text-red-500 capitalize
+    }
+
+    .invalid-input {
+      @apply bg-red-50 border border-red-500 text-red-900 placeholder-red-700  rounded-lg focus:ring-red-500 dark:bg-gray-700 focus:border-red-500 block w-full dark:text-red-500 dark:placeholder-red-500 dark:border-red-500
+    }
+    .theme-btn {
+      @apply flex cursor-pointer justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full  shadow-xs dark:hover:text-white dark:text-gray-400  dark:bg-gray-700 dark:hover:bg-gray-600
+    }
+
+    }
+
+
+
+.text-gradient {
+    background-image: linear-gradient(to right, #17BB82 0% 50%, #fff 50% 100%);
+    background-clip: text;
+    color: transparent;
+}
+.banner-avatars , .about-overlay-2 {
+  animation: downToUp 0.5s ease-in-out infinite alternate;
+}
+
+ h2.header {
+  z-index: 0;
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 50%;
+    margin: 10px auto 0 auto;
+    position: absolute;
+    top: 16px;
+    z-index: -1;
+    background-image: url(/assets/images/reviews/dots.png);
+  }
+}
+
+
+
+
+@keyframes downToUp {
+    0% {transform: translateY(0px);}
+    100% {transform: translateY(-10px);}
+
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+}

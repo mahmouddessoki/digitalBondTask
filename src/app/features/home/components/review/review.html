@@ -1,0 +1,30 @@
+<section  id="reviews" class="py-20 font-reviews bg-[#F7F7F7] dark:bg-gray-700">
+  <h2 class="header section-header">Clients Reviews</h2>
+
+
+  <owl-carousel-o [options]="customOptions">
+    @for (review of reviews; track review.id) {
+    <ng-template carouselSlide [id]="review.id" [dotContent]="getTrustedSnippet(review.img)">
+      <img
+        [src]="review.img"
+        [alt]="'review client'"
+        class="rounded-full border border-gray-200 border-4"
+        [title]="review.name"
+      />
+      <h3 class="text-lg font-bold mt-3 dark:text-white dark:text-white">{{ review.name }}</h3>
+      <p class="my-3 text-main dark:text-darkTheme font-medium">{{ review.position }}</p>
+      <div class="flex items-center mb-4">
+        <ngx-stars
+          [readonly]="true"
+          [color]="isDarkMode() ? '#0E7050' : '#17BB82'"
+          [size]="2"
+          [maxStars]="5"
+          [initialStars]="review.rating"
+        ></ngx-stars>
+      </div>
+      <p class="md:w-2/3 w-full px-4 text-center text-gray-500 dark:text-white mb-3">{{ review.comment }}</p>
+    </ng-template>
+    }
+  </owl-carousel-o>
+
+</section>

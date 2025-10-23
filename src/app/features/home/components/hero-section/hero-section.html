@@ -1,0 +1,73 @@
+<section id="hero" class="relative lg:mt-0 mt-40 section-app">
+
+  <div data-aos="fade-right"
+    class="content text-white mx-auto col-span-12 lg:col-span-7 xl:col-span-7 text-center lg:text-start"
+  >
+    <h1 class="lg:text-[30px] md:text-[28px] sm:text-[22px] text-[18px] font-bold tracking-[5px] mb-8">
+      <span class="sm:inline-block hidden me-2">Welcome to</span>
+      <om-typewriter
+        [words]="words"
+        [disableLoop]="false"
+        [writeSpeed]="100"
+        [writeDelay]="0"
+        [deleteDelay]="100"
+        [textCursorColor]="'transparent'"
+        [styleClass]="'text-gradient inline-block'"
+      ></om-typewriter>
+    </h1>
+    <p class="text-[15px] md:text-[20px] capitalize w-4/5 mx-auto lg:mx-0">
+      we mixes and matches creativity and commitment to help brands go beyond the limit
+    </p>
+
+    <div class="btns mb-10 lg:mb-0 flex items-center justify-center lg:justify-start">
+      <button class="bg-main dark:bg-darkTheme hero-btn mr-4 hover:bg-transparent hover:border-white">
+        Get Started
+      </button>
+      <button class="border border-white hover:border-main dark:hover:border-darkTheme hero-btn">Learn More</button>
+    </div>
+  </div>
+  <div data-aos="fade-left" class="banner header-img mx-auto relative justify-center col-span-12 lg:col-span-5">
+    <img src="/assets/images/hero-banner.png" class="hero-img w-1/1 object-fit" alt="hero banner" />
+    <div data-aos="fade-up" data-aos-delay="500"
+      class="banner-avatars bottom-[15px] xl:bottom-0 right-[15px] rounded-[10px] shadow-lg dark:bg-gray-700 absolute w-full lg:w-1/2 p-4 bg-white"
+    >
+      <div class="flex items-center">
+        <img
+          src="/assets/images/avatar-1.webp"
+          alt="avatar-img"
+          class="avatar w-[2.5rem] h-[2.5rem] rounded-full border-4 border-white relative transform"
+        />
+        <img
+          src="/assets/images/avatar-2.webp"
+          alt="avatar-img"
+          class="avatar w-[2.5rem] h-[2.5rem] rounded-full border-4 border-white relative start-[-10px] transform"
+        />
+        <img
+          src="/assets/images/avatar-3.webp"
+          alt="avatar-img"
+          class="avatar w-[2.5rem] h-[2.5rem] rounded-full border-4 border-white relative start-[-20px] transform"
+        />
+        <img
+          src="/assets/images/avatar-4.webp"
+          alt="avatar-img"
+          class="avatar w-[2.5rem] h-[2.5rem] rounded-full border-4 border-white relative start-[-30px] transform"
+        />
+        <img
+          src="/assets/images/avatar-5.webp"
+          alt="avatar-img"
+          class="avatar w-[2.5rem] h-[2.5rem] rounded-full border-4 border-white relative start-[-40px] transform"
+        />
+        <span
+          class="flex items-center text-sm bg-main w-[2.5rem] h-[2.5rem] rounded-full border-4 border-white relative text-white transform start-[-50px]"
+          >+45</span
+        >
+      </div>
+      <p class="text-sm text-gray-400 mt-1 capitalize">
+        <strong class="text-lg">+45</strong> developer will help you grow your business
+      </p>
+    </div>
+  </div>
+  <img src="assets/images/1-sl5.png" class="fa-spin absolute top-[20%] right-[10%]" alt="motion" />
+  <img src="assets/images/1-sl5.png" class="fa-spin absolute left-[50%] top-[50%]" alt="motion" />
+  <img src="assets/images/1-sl5.png" class="fa-spin absolute top-[15%]" alt="motion" />
+</section>

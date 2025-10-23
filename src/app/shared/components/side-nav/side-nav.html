@@ -1,0 +1,49 @@
+
+
+
+<div class="relative bg-red-100">
+
+
+    <div
+      id="drawer-disabled-backdrop"
+      [class]="{
+        'hidden':linkClicked()
+      }"
+      class="lg:hidden fixed top-0 bg-main/85 left-0 z-50  h-screen p-4 overflow-y-auto transition-transform -translate-x-full w-screen sm:w-1/2 dark:bg-gray-800"
+      tabindex="-1"
+      aria-labelledby="drawer-disabled-backdrop-label"
+    >
+      <div class="nav-header">
+        <a (click)="scrollToSection('hero')" class="nav-logo">
+          <img src="/assets/images/logo.webp" class="h-15" alt="digital-bond logo" />
+        </a>
+        <button
+          type="button"
+          data-drawer-hide="drawer-disabled-backdrop"
+          aria-controls="drawer-disabled-backdrop"
+          class="side-nav-close"
+        >
+          <i class="fa-solid fa-xmark text-xl cursor-pointer"></i>
+          <span class="sr-only">Close menu</span>
+        </button>
+      </div>
+      <div class="py-4 overflow-y-auto">
+        <ul class="space-y-2 font-medium">
+          @for (navLink of navLinks(); track $index) {
+
+          <li>
+            @let scrollTarget = navLink.label.toLowerCase() ;
+            <a (click)="scrollToSection(scrollTarget === 'home'?'hero':scrollTarget)" class="side-nav-link cursor-pointer  items-center mb-4 group">
+              <i class="{{ navLink.icon }} text-white side-nav-icon me-3 group-hover:text-main"></i>
+              <span class="text-black uppercase text-white group-hover:text-main">{{ navLink.label }}</span>
+            </a>
+          </li>
+          }
+        </ul>
+      </div>
+      <ul class="list-none">
+        <app-social-icons />
+      </ul>
+    </div>
+  </div>
+

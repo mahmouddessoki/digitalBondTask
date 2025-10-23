@@ -1,0 +1,66 @@
+<section id="contact" class="py-20 dark:bg-gray-600" >
+  <div class="mx-auto section-app justify-center items-start">
+
+    <h2 class="header section-header col-span-12">Contact Us</h2>
+    <div class="contacts col-span-12 mt-8">
+      <div class="grid grid-cols-12 md:gap-8">
+        @for (contact of contacts; track $index) {
+
+          <div [attr.data-aos]="$last?'fade-left':'fade-right'" class="lg:col-span-4 md:col-span-6 col-span-12 lg:mb-0 mb-3">
+            <div class="contact-card text-center h-full group bg-white dark:bg-gray-700 p-5 rounded-lg shadow-lg">
+              <div class="icon w-15 group-hover:bg-main group-hover:dark:bg-darkTheme transition duration-200 h-15 mx-auto flex items-center justify-center rounded-full bg-[#F7F7F7] text-white text-3xl">
+                <i class="{{contact.icon}} group-hover:text-white  text-xl text-gray-800"></i>
+              </div>
+              <h3 class="title text-[18px] my-3 dark:text-white font-bold">{{contact.title}}</h3>
+              <p class="info text-[15px] text-gray-400">{{contact.info}}</p>
+            </div>
+          </div>
+        }
+      </div>
+
+    </div>
+    <div class="messageForm col-span-12 mt-20">
+
+
+    <form class="w-full mx-auto" [formGroup]="contactForm" (ngSubmit)="confirmContact()" >
+      <div class="mb-7">
+        @let nameControl = contactForm.get('name')!;
+
+        <input type="text" data-aos="fade-up" [class]="{
+          'invalid-input' : nameControl.invalid && nameControl.touched
+        }" formControlName="name" id="clienTName" class="form-input" placeholder="Ex.mahmoud muhammed dessoki"  />
+
+        <app-validation-message [control]="nameControl" />
+      </div>
+      <div class="mb-7">
+        @let emailControl = contactForm.get('email')!;
+
+        <input type="email" data-aos="fade-up" data-aos-delay="500" [class]="{
+          'invalid-input' : emailControl.invalid && emailControl.touched
+        }" formControlName="email" id="email" class="form-input" placeholder="Ex.mahmouddessoki33@gmail.com" required />
+        <app-validation-message [control]="emailControl" />
+      </div>
+      <div class="mb-7">
+        @let phoneControl = contactForm.get('phone')!;
+        <input type="text" data-aos="fade-up" data-aos-delay="800" [class]="{
+          'invalid-input' : phoneControl.invalid && phoneControl.touched
+        }"  id="phone" formControlName="phone" class="form-input" placeholder="Ex.011******71" required />
+        <app-validation-message [control]="phoneControl" />
+
+      </div>
+      <div class="mb-7">
+        @let messageControl = contactForm.get('message')!;
+         <textarea  id="message" data-aos="fade-up" data-aos-delay="800" [class]="{
+          'invalid-input' : messageControl.invalid && messageControl.touched
+        }" formControlName="message" rows="7" class="form-textarea" placeholder="Leave a message..."></textarea>
+        <app-validation-message [control]="messageControl" />
+      </div>
+      <button type="submit" [disabled]="!contactForm.valid" [class]="{
+        'invalid-btn' : !contactForm.valid
+      }" class="form-btn text-base capitalize">message us</button>
+
+    </form>
+
+    </div>
+  </div>
+</section>

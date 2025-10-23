@@ -1,0 +1,11 @@
+footer {
+    img {
+      filter: invert(66%) sepia(9%) saturate(3155%) hue-rotate(108deg) brightness(86%) contrast(94%);
+    }
+    a {
+      cursor: pointer;
+      &:hover {
+        color: #17BB82;
+      }
+    }
+}

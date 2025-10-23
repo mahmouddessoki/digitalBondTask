@@ -1,0 +1,17 @@
+  <div class="line-above dark:text-white relative lg:hidden text-[18px] font-semibold mb-4 capitalize text-center">
+    Get in touch
+  </div>
+  <div class="flex items-center justify-center gap-5">
+  @for (icon of socialIcons(); track $index) {
+  <li
+    class="icon-li"
+    (mouseenter)="icon.isHovered = true"
+    (mouseleave)="icon.isHovered = false"
+    [style]="icon.isHovered ? 'backgroundColor:' + icon.hoverColor : ''"
+  >
+    <a [href]="icon.url" target="_blank" class="social-icon">
+      <i class="fa-brands {{ icon.name }} text-white"></i>
+    </a>
+  </li>
+  }
+</div>
