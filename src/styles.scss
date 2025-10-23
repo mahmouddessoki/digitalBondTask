@@ -6,6 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @custom-variant dark (&:where(.dark, .dark *));
 
+
 @theme {
   --font-primary : "segoe ui light", sans-serif;
   --font-secondary : "Inter", sans-serif;
@@ -129,4 +130,28 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 20px;
+}
+
+
+#global-loader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #121212; /* dark mode background */
+  z-index: 9999;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top: 4px solid #17BB82; /* your accent color */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
 }
