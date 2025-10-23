@@ -6,7 +6,7 @@
       <div class="grid grid-cols-12 md:gap-8">
         @for (contact of contacts; track $index) {
 
-          <div [attr.data-aos]="$last?'fade-left':'fade-right'" class="lg:col-span-4 md:col-span-6 col-span-12 lg:mb-0 mb-3">
+          <div class="lg:col-span-4 md:col-span-6 col-span-12 lg:mb-0 mb-3">
             <div class="contact-card text-center h-full group bg-white dark:bg-gray-700 p-5 rounded-lg shadow-lg">
               <div class="icon w-15 group-hover:bg-main group-hover:dark:bg-darkTheme transition duration-200 h-15 mx-auto flex items-center justify-center rounded-full bg-[#F7F7F7] text-white text-3xl">
                 <i class="{{contact.icon}} group-hover:text-white  text-xl text-gray-800"></i>
@@ -26,7 +26,7 @@
       <div class="mb-7">
         @let nameControl = contactForm.get('name')!;
 
-        <input type="text" data-aos="fade-up" [class]="{
+        <input type="text"  [class]="{
           'invalid-input' : nameControl.invalid && nameControl.touched
         }" formControlName="name" id="clienTName" class="form-input" placeholder="Ex.mahmoud muhammed dessoki"  />
 
@@ -35,14 +35,14 @@
       <div class="mb-7">
         @let emailControl = contactForm.get('email')!;
 
-        <input type="email" data-aos="fade-up" data-aos-delay="500" [class]="{
+        <input type="email"  [class]="{
           'invalid-input' : emailControl.invalid && emailControl.touched
         }" formControlName="email" id="email" class="form-input" placeholder="Ex.mahmouddessoki33@gmail.com" required />
         <app-validation-message [control]="emailControl" />
       </div>
       <div class="mb-7">
         @let phoneControl = contactForm.get('phone')!;
-        <input type="text" data-aos="fade-up" data-aos-delay="800" [class]="{
+        <input type="text"  [class]="{
           'invalid-input' : phoneControl.invalid && phoneControl.touched
         }"  id="phone" formControlName="phone" class="form-input" placeholder="Ex.011******71" required />
         <app-validation-message [control]="phoneControl" />
@@ -50,7 +50,7 @@
       </div>
       <div class="mb-7">
         @let messageControl = contactForm.get('message')!;
-         <textarea  id="message" data-aos="fade-up" data-aos-delay="800" [class]="{
+         <textarea  id="message"  [class]="{
           'invalid-input' : messageControl.invalid && messageControl.touched
         }" formControlName="message" rows="7" class="form-textarea" placeholder="Leave a message..."></textarea>
         <app-validation-message [control]="messageControl" />
