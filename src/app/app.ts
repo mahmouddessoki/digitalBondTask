@@ -7,7 +7,6 @@ import { Navbar } from './shared/components/navbar/navbar';
 import { initFlowbite } from 'flowbite';
 import { ThemeToggler } from './core/components/theme-toggler/theme-toggler';
 import { AppMode } from './core/services/app-mode';
-import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, Navbar, Footer, ThemeToggler],
@@ -24,13 +23,5 @@ export class App {
       initFlowbite();
     });
   }
-  ngOnInit() {
-    if (isPlatformBrowser(this.id)) {
-      import('aos').then((AOS) => {
-        AOS.init({
-          duration: 1000
-        });
-      });
-    }
-  }
+
 }
