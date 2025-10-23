@@ -7,7 +7,6 @@ import { Navbar } from './shared/components/navbar/navbar';
 import { initFlowbite } from 'flowbite';
 import { ThemeToggler } from './core/components/theme-toggler/theme-toggler';
 import { AppMode } from './core/services/app-mode';
-import AOS from 'aos';
 import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-root',
@@ -27,8 +26,10 @@ export class App {
   }
   ngOnInit() {
     if (isPlatformBrowser(this.id)) {
-      AOS.init({
-        duration: 1000,
+      import('aos').then((AOS) => {
+        AOS.init({
+          duration: 1000
+        });
       });
     }
   }
